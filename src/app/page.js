@@ -1,153 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import Image from 'next/image'
 import styles from './page.module.css'
 import 'styles/global.style.css'
 import 'styles/bootstrap.min.css'
 import React, { useState , useEffect} from 'react'
+import Header from '@/components/header/page';
+import Notification from '@/components/notification/page';
 
 export default function Home() {
-  const [notificationOpen, setNotificationOpen] = useState(false);
-  function OpenNotification() {
-    document.getElementById("notification").style.display = "block";
-  }
-  useEffect(() => {
-    
-    
-  }, []);
   return (
     <div className="wrapper">
       <div className="wrapper-inline">
-      <header className="no-background">
-          <div className="search-button" data-search="open" onClick={OpenNotification}>
-            <img src="/content/notification1.png" className="not-icon1" alt="" />
-            <img src="/content/notification2.png" className="not-icon2" alt="" />
-          </div>
-      </header>
-        <div className="search-form" id="notification">
-          <span className="close-search-form" data-search="close"
-            ><i className="fa fa-times"></i>
-          </span>
-          <form>
-            <div className="search-input">
-              <input
-                type="text"
-                name="q"
-                className="form-element"
-                placeholder="Search..."
-              />
-              <button type="submit" className="search-input-btn">
-                <i className="fa fa-arrow-right"></i>
-              </button>
-            </div>
-          </form>
-          <ul className="notification-list list-unstyled">
-            <li>
-              <div className="d-flex align-items-center justify-content-between">
-                <div className="d-flex align-items-center">
-                  <div className="">
-                    <h5 className="coin-name">You have 3 notifications</h5>
-                  </div>
-                </div>
-                <div>
-                  <a href="#"
-                    ><small className="text-muted d-block"
-                      >mark all as read</small></a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="d-flex align-items-center justify-content-between">
-                <div className="d-flex align-items-center">
-                  <div className="notice-icon available">
-                    <i className="fa fa-check"></i>
-                  </div>
-                  <div className="ml-10">
-                    <h4 className="coin-name">Successful transaction 0.01 BTC</h4>
-                    <small className="text-muted">15 min ago</small>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="d-flex align-items-center justify-content-between">
-                <div className="d-flex align-items-center">
-                  <div className="notice-icon away">
-                    <i className="fa fa-clock-o"></i>
-                  </div>
-                  <div className="ml-10">
-                    <h4 className="coin-name">4 of Pending Transactions!</h4>
-                    <small className="text-muted"> 12 hours ago</small>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="d-flex align-items-center justify-content-between">
-                <div className="d-flex align-items-center">
-                  <div className="notice-icon busy">
-                    <i className="fa fa-times"></i>
-                  </div>
-                  <div className="ml-10">
-                    <h4 className="coin-name">Cancelled Order of 200 ICO</h4>
-                    <small className="text-muted">15 Feb - 08:34</small>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="d-flex align-items-center justify-content-between">
-                <div className="d-flex align-items-center">
-                  <div className="notice-icon available">
-                    <i className="fa fa-check"></i>
-                  </div>
-                  <div className="ml-10">
-                    <h4 className="coin-name">Great Speed Notify of 1.34 LTC</h4>
-                    <small className="text-muted">24 jan - 20:43</small>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="d-flex align-items-center justify-content-between">
-                <div className="d-flex align-items-center">
-                  <a href="#" className="text-muted">Read all notifications</a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div className="bottom-menu-section">
-          <ul className="bottom-menu list-unstyled list-inline">
-            <li>
-              <a href="index.html">
-                <img src="/content/l1.png" alt="" />
-                <p>Home</p>
-              </a>
-            </li>
-            <li>
-              <a href="wallet.html">
-                <img src="/content/l2.png" alt="" />
-                <p>Wallet</p>
-              </a>
-            </li>
-            <li>
-              <a className="b-m-pluse" href="#"><i className="fa fa-plus"></i></a>
-            </li>
-            <li>
-              <a href="setting.html">
-                <img src="/content/l3.png" alt="" />
-                <p>Cards</p>
-              </a>
-            </li>
-            <li>
-              <a href="profile.html">
-                <img src="/content/l4.png" alt="" />
-                <p>Profile</p>
-              </a>
-            </li>
-          </ul>
-        </div>
+        <Header />
+        <Notification />
         {/* content */}
         <main className="margin mt-0">
           <div className="dash-balance">
