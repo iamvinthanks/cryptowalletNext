@@ -1,12 +1,34 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
 import styles from '../globals.css'
 import 'styles/global.style.css'
 import 'styles/bootstrap.min.css'
-import React, { useState , useEffect} from 'react'
+import 'styles/font-awesome.min.css'
+import 'styles/animate.css'
+import WalletComponent from '@/components/wallet/page';
 
 export default function Wallet() {
+    const Asset = [
+        {
+            id: 1,
+            name: "Bitcoin",
+            symbol: "BTC",
+            wallet: "XAHS-AKDLAD4523AAI",
+        },
+        {
+            id: 2,
+            name: "Etherium",
+            symbol: "ETH",
+            wallet: "ETH-AKDLAD4523AAI",
+        },
+        {
+            id: 3,
+            name: "Litecoin",
+            symbol: "LTC",
+            wallet: "XAHS-AKDLAD4523AAI",
+        },
+    ];
     return (
         <div classNameName="wrapper">
             <div className="wrapper-inline">
@@ -61,195 +83,14 @@ export default function Wallet() {
 
                     <section className="wallets-list container">
                         <h4 className="title-main">Cryptocoins Wallets</h4>
-                        <div className="expandable-item accordion active" data-group="accordion1">
-                            <div className="expandable-header purp">
-                                <i className="cc BTC-alt"></i>
-                                <h3 className="list-title">Bitcoin Wallet</h3>
-                                <i className="list-arrow fa fa-angle-down"></i>
-                            </div>
-                            <div className="expandable-content">
-                                <div className="padding-content">
-                                    <h4>Recent Bitcoin Transactions</h4>
-                                    <div className="recent-trans">
-                                        <ul className="dropdown-menu-list list-unstyled no-mb">
-                                            <li>
-                                                <div className="notice-icon">
-                                                    <i className="fa fa-institution"></i>
-                                                </div>
-                                                <div>
-                                                    <span className="name">
-                                                        <strong>Recieved Amount</strong>
-                                                        <span className="time small">+ 3.39498 BTC</span>
-                                                    </span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div className="notice-icon">
-                                                    <i className="fa fa-credit-card"></i>
-                                                </div>
-                                                <div>
-                                                    <span className="name">
-                                                        <strong>Sent Amount</strong>
-                                                        <span className="time small">- 0.81729 BTC</span>
-                                                    </span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div className="notice-icon">
-                                                    <i className="fa fa-check"></i>
-                                                </div>
-                                                <div>
-                                                    <span className="name">
-                                                        <strong>Recieved Amount</strong>
-                                                        <span className="time small">+ 548,485.44 BTC</span>
-                                                    </span>
-                                                </div>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                    <div className="wallet-address">
-                                        <h4 className="w-text mt-0">Bitcoin Wallet Address</h4>
-                                        <div className="form-row-group with-icons">
-                                            <div className="form-row no-padding">
-                                                <i className="cc BTC text-muted"></i>
-                                                <input type="text" name="aaa" className="form-element" value="XAHS-AKDLAD4523AAI"/>
-                                            </div>
-                                        </div>
-                                        <img src="content/qr.png" alt="" className="mt-15"/>
-                                        <h4>This is your Wallet ID</h4>
-                                        <p className="g-text mb-0">Scan This crediential to send or exchange crypto assets with just scaning this code</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div className="expandable-item accordion" data-group="accordion1">
-                            <div className="expandable-header purp">
-                                <i className="cc ETH-alt"></i>
-                                <h3 className="list-title">Ethereum Wallet</h3>
-                                <i className="list-arrow fa fa-angle-down"></i>
-                            </div>
-                            <div className="expandable-content">
-                                <div className="padding-content">
-                                    <h4>Recent Ethereum Transactions</h4>
-                                    <div className="recent-trans">
-                                        <ul className="dropdown-menu-list list-unstyled no-mb">
-                                            <li>
-                                                <div className="notice-icon">
-                                                    <i className="fa fa-institution"></i>
-                                                </div>
-                                                <div>
-                                                    <span className="name">
-                                                        <strong>Recieved Amount</strong>
-                                                        <span className="time small">+ 3.39498 ETH</span>
-                                                    </span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div className="notice-icon">
-                                                    <i className="fa fa-credit-card"></i>
-                                                </div>
-                                                <div>
-                                                    <span className="name">
-                                                        <strong>Sent Amount</strong>
-                                                        <span className="time small">- 0.81729 ETH</span>
-                                                    </span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div className="notice-icon">
-                                                    <i className="fa fa-check"></i>
-                                                </div>
-                                                <div>
-                                                    <span className="name">
-                                                        <strong>Recieved Amount</strong>
-                                                        <span className="time small">+ BTC8,485.44 ETH</span>
-                                                    </span>
-                                                </div>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                    <div className="wallet-address">
-                                        <h4 className="w-text mt-0">Ethereum Wallet Address</h4>
-                                        <div className="form-row-group with-icons">
-                                            <div className="form-row no-padding">
-                                                <i className="cc ETH text-muted"></i>
-                                                <input type="text" name="aaa" className="form-element" value="XAHS-AKDLAD4523AAI"/>
-                                            </div>
-                                        </div>
-                                        <img src="content/qr.png" alt="" className="mt-15"/>
-                                        <h4>This is your Wallet ID</h4>
-                                        <p className="g-text mb-0">Scan This crediential to send or exchange crypto assets with just scaning this code</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div className="expandable-item accordion" data-group="accordion1">
-                            <div className="expandable-header purp">
-                                <i className="cc LTC-alt"></i>
-                                <h3 className="list-title">Litecoin Wallet</h3>
-                                <i className="list-arrow fa fa-angle-down"></i>
-                            </div>
-                            <div className="expandable-content">
-                                <div className="padding-content">
-                                    <h4>Recent Litecoin Transactions</h4>
-                                    <div className="recent-trans">
-                                        <ul className="dropdown-menu-list list-unstyled no-mb">
-                                            <li>
-                                                <div className="notice-icon">
-                                                    <i className="fa fa-institution"></i>
-                                                </div>
-                                                <div>
-                                                    <span className="name">
-                                                        <strong>Recieved Amount</strong>
-                                                        <span className="time small">+ 3.39498 LTC</span>
-                                                    </span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div className="notice-icon">
-                                                    <i className="fa fa-credit-card"></i>
-                                                </div>
-                                                <div>
-                                                    <span className="name">
-                                                        <strong>Sent Amount</strong>
-                                                        <span className="time small">- 0.81729 LTC</span>
-                                                    </span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div className="notice-icon">
-                                                    <i className="fa fa-check"></i>
-                                                </div>
-                                                <div>
-                                                    <span className="name">
-                                                        <strong>Recieved Amount</strong>
-                                                        <span className="time small">+ BTC8,485.44 LTC</span>
-                                                    </span>
-                                                </div>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                    <div className="wallet-address">
-                                        <h4 className="w-text mt-0">Litecoin Wallet Address</h4>
-                                        <div className="form-row-group with-icons">
-                                            <div className="form-row no-padding">
-                                                <i className="cc LTC text-muted"></i>
-                                                <input type="text" name="aaa" className="form-element" value="XAHS-AKDLAD4523AAI"/>
-                                            </div>
-                                        </div>
-                                        <img src="content/qr.png" alt="" className="mt-15"/>
-                                        <h4>This is your Wallet ID</h4>
-                                        <p className="g-text mb-0">Scan This crediential to send or exchange crypto assets with just scaning this code</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
+                        {Asset.map(item => (
+                            <WalletComponent
+                                key={item.id}
+                                name={item.name}
+                                symbol={item.symbol}
+                                wallet={item.wallet}
+                            />
+                        ))}
                     </section>
 
                     <section className="container">
