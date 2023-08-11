@@ -6,7 +6,7 @@ export default function NavBottom() {
         <div className="bottom-menu-section">
           <ul className="bottom-menu list-unstyled list-inline">
             <li>
-              <a href="index.html">
+              <a href="/">
                 <img src="/content/l1.png" alt="" />
                 <p>Home</p>
               </a>

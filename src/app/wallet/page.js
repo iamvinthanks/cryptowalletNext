@@ -4,10 +4,10 @@ import Image from 'next/image'
 import styles from '../globals.css'
 import 'styles/global.style.css'
 import 'styles/bootstrap.min.css'
-import 'styles/font-awesome.min.css'
 import 'styles/animate.css'
 import WalletComponent from '@/components/wallet/page';
-
+import Header from '@/components/header/page';
+import Notification from '@/components/notification/page';
 export default function Wallet() {
     const Asset = [
         {
@@ -32,6 +32,8 @@ export default function Wallet() {
     return (
         <div classNameName="wrapper">
             <div className="wrapper-inline">
+            <Header />
+        <Notification />
                 <main className="margin mt-0">
 
                     <div className="dash-balance">
@@ -80,7 +82,6 @@ export default function Wallet() {
                             </div>
                         </div>
                     </section>
-
                     <section className="wallets-list container">
                         <h4 className="title-main">Cryptocoins Wallets</h4>
                         {Asset.map(item => (
