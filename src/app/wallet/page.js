@@ -33,7 +33,7 @@ export default function Wallet() {
         <div classNameName="wrapper">
             <div className="wrapper-inline">
             <Header />
-        <Notification />
+            <Notification />
                 <main className="margin mt-0">
 
                     <div className="dash-balance">
